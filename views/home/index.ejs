@@ -1,0 +1,31 @@
+<div data-alert class="alert-box">
+  You've successfully logged in.
+  <a href="#" class="close">&times;</a>
+</div>
+<div class="row">
+    <div class="small-12 large-12 columns">
+        <ul class="small-block-grid-5">
+            <% _.each(users, function(user) { %>
+            <li class="panel">
+                <img class="th" src="<%= user.avatar_url %>" />
+                <p><%= user.name %></p>
+                <p><%= user.location %></p>
+                <p><%= user.company %></p>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
+
+<div id="myProfile" class="reveal-modal" data-reveal>
+    <h2>User Model</h2>
+    <table class="table">
+        <% for(key in user.toJSON() ) { %>
+        <tr>
+            <td><%= key %>: </td>
+            <td class="boxy"><%= user[key] %></td>
+        </tr>
+        <% } %>
+    </table>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
