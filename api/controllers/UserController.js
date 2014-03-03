@@ -42,7 +42,7 @@ module.exports = {
 	  			return res.redirect('/user/edit/' + req.param('id'));
 	  		}
 
-	  		res.redirect('/user/edit/' + req.param('id'));
+	  		res.redirect('/');
 	  	});
     },
 
