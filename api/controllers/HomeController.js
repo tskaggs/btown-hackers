@@ -37,6 +37,15 @@ module.exports = {
         // });
     },
 
+    sendmail:function(req, res) {
+        console.log('[EmailService] sendmail is running!');
+        var subject = req.param("subject");
+        var from = req.param("from");
+        var to = req.param("to");
+        var body = req.param("body");
+        EmailService.sendInviteEmail({subject: subject, to: to, from: from, body: body});
+      },
+
 
     /**
      * Overrides for the settings in `config/controllers.js`

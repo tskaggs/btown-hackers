@@ -34,7 +34,7 @@
                         </a>
                     </div>
                     <% if (user.hireable === 'True') { %>
-                      <a href="#" class="button hire_button">For Hire!</a>
+                      <a href="#" data-reveal-id="myMessage" data-reveal class="button hire_button">For Hire!</a>
                     <% } else { %>
                       <a href="#" class="button hire_button disabled">Not for hire.</a>
                     <% } %>
@@ -103,6 +103,25 @@
         </ul>
     </div>
 </div>
+
+<div id="myMessage" class="reveal-modal small" data-reveal>
+    <form action="/home/sendmail" method="POST" class="form-signin">
+      <div class="small-6 large-6 columns">
+
+        <input value="to" name="to" type="text" placeholder="To Email" />
+        <input value="from" name="from" type="text" placeholder="From Email" />
+        <input value="subject" name="subject" type="text" placeholder="Subject Email" />
+        
+      </div>
+      <div class="small-6 large-6 columns">
+        <textarea class="bio_box" value="body" name="body" type="text" placeholder="body"></textarea>
+        <input type="submit" value="Proceed" class="small button expand" />
+        <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+      </div>
+    </form>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+
 
 <div id="myProfile" class="reveal-modal small" data-reveal>
     <div class="widget">

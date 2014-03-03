@@ -21,12 +21,6 @@ module.exports = {
     	res.view({
             user: req.user
         });
-    	// User.findOne(req.param('id'), function foundUser(err, user) {
-	  		// if (err) return next(err);
-	  		// res.view({
-	    //         user: req.user
-	    //     });
-	    // });
   	},
   
     edit: function (req,res) {
