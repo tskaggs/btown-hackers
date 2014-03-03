@@ -4,6 +4,8 @@
 </div> -->
 <div class="row">
     <div class="small-12 large-12 columns">
+
+      <hr>
         <ul class="small-block-grid-4">
             <li>
                 <div class="widget">
@@ -16,29 +18,30 @@
                   <h3>Bristol, UK</h3>
                 </div>
             </li>
-            <% _.each(users, function(user) { %>
+            <% _.each(users, function(hacker) { %>
             <li>
                 <div class="widget">
                     <div class="cover">
                         <img src="http://25.media.tumblr.com/18e25cdcdaaced3b2b8a467724720ece/tumblr_n10n1wmxiS1st5lhmo1_1280.jpg" />
                     </div>
-                    <img src="<%= user.avatar_url %>" class="photo" />
-                    <h1><a href="/user/show/<%= user.id %>"><%= user.name %></a></h1>
-                    <h2><%= user.position %></h2>
-                    <h2>@<%= user.company %></h2>
-                    <h3><%= user.location %></h3>
-                    <h3 class="bio_box_1"><%= user.bio %></h3>
+                    <img src="<%= hacker.avatar_url %>" class="photo" />
+                    <h1><a href="/user/show/<%= hacker.id %>"><%= hacker.name %></a></h1>
+                    <h2><%= hacker.position %></h2>
+                    <h2>@<%= hacker.company %></h2>
+                    <h3><%= hacker.location %></h3>
+                    <h3 class="bio_box_1"><%= hacker.bio %></h3>
                     <div class="links_bottom">
-                        <a target="_blank" href="<%= user.profileUrl %>">
+                        <a target="_blank" href="<%= hacker.profileUrl %>">
                             <img src="/images/github_icon.png" />
                         </a>
                     </div>
-                    <% if (user.hireable === 'True') { %>
+                    <% if (hacker.hireable === 'True') { %>
                       <a href="#" data-reveal-id="myMessage" data-reveal class="button hire_button">For Hire!</a>
                     <% } else { %>
                       <a href="#" class="button hire_button disabled">Not for hire.</a>
                     <% } %>
                 </div>
+              
             </li>
             <% }) %>
             <li>
@@ -104,24 +107,7 @@
     </div>
 </div>
 
-<div id="myMessage" class="reveal-modal small" data-reveal>
-    <form action="/home/sendmail" method="POST" class="form-signin">
-      <div class="small-6 large-6 columns">
-
-        <input value="to" name="to" type="text" placeholder="To Email" />
-        <input value="from" name="from" type="text" placeholder="From Email" />
-        <input value="subject" name="subject" type="text" placeholder="Subject Email" />
-        
-      </div>
-      <div class="small-6 large-6 columns">
-        <textarea class="bio_box" value="body" name="body" type="text" placeholder="body"></textarea>
-        <input type="submit" value="Proceed" class="small button expand" />
-        <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-      </div>
-    </form>
-    <a class="close-reveal-modal">&#215;</a>
-</div>
-
+<%- partial('_messages')%>
 
 <div id="myProfile" class="reveal-modal small" data-reveal>
     <div class="widget">

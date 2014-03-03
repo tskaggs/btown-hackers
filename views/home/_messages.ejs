@@ -1,0 +1,17 @@
+<div id="myMessage" class="reveal-modal small" data-reveal>
+    <form action="/home/sendmail" method="POST" class="form-signin">
+      <div class="small-6 large-6 columns">
+        
+        <input value="<%= user.id %>" name="to" type="hidden"/>
+        <input value="from" name="from" type="text" placeholder="From Email" />
+        <input value="subject" name="subject" type="text" placeholder="Subject Email" />
+        
+      </div>
+      <div class="small-6 large-6 columns">
+        <textarea class="bio_box" value="body" name="body" type="text" placeholder="body"></textarea>
+        <input type="submit" value="Proceed" class="small button expand" />
+        <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+      </div>
+    </form>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
