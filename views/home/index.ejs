@@ -4,21 +4,117 @@
 </div>
 <div class="row">
     <div class="small-12 large-12 columns">
-        <ul class="small-block-grid-5">
+        <ul class="small-block-grid-4">
+            <li>
+                <div class="widget">
+                  <div class="cover">
+                    <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
+                  </div>
+                  <img src="http://s1.cdn.ryanboylett.co.uk/generic/image_jpg_00006.jpg" class="photo" />
+                  <h1>Ryan Boylett</h1>
+                  <h2>Web Developer</h2>
+                  <h3>Bristol, UK</h3>
+                </div>
+            </li>
             <% _.each(users, function(user) { %>
-            <li class="panel">
-                <img class="th" src="<%= user.avatar_url %>" />
-                <p><%= user.name %></p>
-                <p><%= user.location %></p>
-                <p><%= user.company %></p>
+            <li>
+                <div class="widget">
+                    <div class="cover">
+                        <img src="http://25.media.tumblr.com/18e25cdcdaaced3b2b8a467724720ece/tumblr_n10n1wmxiS1st5lhmo1_1280.jpg" />
+                    </div>
+                    <img src="<%= user.avatar_url %>" class="photo" />
+                    <h1><%= user.name %></h1>
+                    <h2><%= user.company %></h2>
+                    <h3><%= user.location %></h3>
+                    <div class="links_bottom">
+                        <a target="_blank" href="<%= user.profileUrl %>">
+                            <img src="/images/github_icon.png" />
+                        </a>
+                    </div>
+                </div>
             </li>
             <% }) %>
+            <li>
+                <div class="widget">
+                  <div class="cover">
+                    <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
+                  </div>
+                  <img src="http://s1.cdn.ryanboylett.co.uk/generic/image_jpg_00006.jpg" class="photo" />
+                  <h1>Ryan Boylett</h1>
+                  <h2>Web Developer</h2>
+                  <h3>Bristol, UK</h3>
+                </div>
+            </li>
+
+<li>
+                <div class="widget">
+                  <div class="cover">
+                    <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
+                  </div>
+                  <img src="http://s1.cdn.ryanboylett.co.uk/generic/image_jpg_00006.jpg" class="photo" />
+                  <h1>Ryan Boylett</h1>
+                  <h2>Web Developer</h2>
+                  <h3>Bristol, UK</h3>
+                </div>
+            </li>
+
+<li>
+                <div class="widget">
+                  <div class="cover">
+                    <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
+                  </div>
+                  <img src="http://s1.cdn.ryanboylett.co.uk/generic/image_jpg_00006.jpg" class="photo" />
+                  <h1>Ryan Boylett</h1>
+                  <h2>Web Developer</h2>
+                  <h3>Bristol, UK</h3>
+                </div>
+            </li>
+
+<li>
+                <div class="widget">
+                  <div class="cover">
+                    <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
+                  </div>
+                  <img src="http://s1.cdn.ryanboylett.co.uk/generic/image_jpg_00006.jpg" class="photo" />
+                  <h1>Ryan Boylett</h1>
+                  <h2>Web Developer</h2>
+                  <h3>Bristol, UK</h3>
+                </div>
+            </li>
+
+<li>
+                <div class="widget">
+                  <div class="cover">
+                    <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
+                  </div>
+                  <img src="http://s1.cdn.ryanboylett.co.uk/generic/image_jpg_00006.jpg" class="photo" />
+                  <h1>Ryan Boylett</h1>
+                  <h2>Web Developer</h2>
+                  <h3>Bristol, UK</h3>
+                </div>
+            </li>
+
+            
         </ul>
     </div>
 </div>
 
 <div id="myProfile" class="reveal-modal" data-reveal>
-    <h2>User Model</h2>
+    <div class="widget">
+        <div class="cover">
+            <img src="http://25.media.tumblr.com/18e25cdcdaaced3b2b8a467724720ece/tumblr_n10n1wmxiS1st5lhmo1_1280.jpg" />
+        </div>
+        <img src="<%= user.avatar_url %>" class="photo" />
+        <h1><%= user.name %></h1>
+        <h2><%= user.company %></h2>
+        <h3><%= user.location %></h3>
+        <div class="links_bottom">
+            <a target="_blank" href="<%= user.profileUrl %>">
+                <img src="/images/github_icon.png" />
+            </a>
+        </div>
+    </div>
+    <!-- <h2>User Model</h2>
     <table class="table">
         <% for(key in user.toJSON() ) { %>
         <tr>
@@ -26,6 +122,6 @@
             <td class="boxy"><%= user[key] %></td>
         </tr>
         <% } %>
-    </table>
+    </table> -->
     <a class="close-reveal-modal">&#215;</a>
 </div>
