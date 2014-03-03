@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="small-12 large-12 columns">
+    	<h2 class="subheader text-center">Edit Profile</h2>
+		<form action="/user/update/<%= user.id %>" method="POST" class="form-signin">
+			<div class="small-6 large-6 columns">
+
+				<input value="<%= user.name %>" name="name" type="text" placeholder="Full Name" />
+				<input value="<%= user.company %>" name="company" type="text" placeholder="Company" />
+				<input value="<%= user.location %>" name="location" type="text" placeholder="Location" />
+				<label>For Hire?</label>
+				<input type="radio" name="hireable" value="True" id="trueOption"><label for="trueOption" checked="">Yes</label>
+				<input type="radio" name="hireable" value="False" id="falseOption"><label for="falseOption">Nope</label>
+	    	</div>
+			<div class="small-6 large-6 columns">
+				<textarea class="bio_box" value="<%= user.bio %>" name="bio" type="text" placeholder="<%= user.bio %>"><%= user.bio %></textarea>
+				<input type="submit" value="Proceed" class="small button expand" />
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+			</div>
+		</form>
+	</div>
+</div>

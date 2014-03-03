@@ -1,7 +1,7 @@
-<div data-alert class="alert-box">
+<!-- <div data-alert class="alert-box">
   You've successfully logged in.
   <a href="#" class="close">&times;</a>
-</div>
+</div> -->
 <div class="row">
     <div class="small-12 large-12 columns">
         <ul class="small-block-grid-4">
@@ -26,11 +26,17 @@
                     <h1><%= user.name %></h1>
                     <h2><%= user.company %></h2>
                     <h3><%= user.location %></h3>
+                    <h3 class="bio_box_1"><%= user.bio %></h3>
                     <div class="links_bottom">
                         <a target="_blank" href="<%= user.profileUrl %>">
                             <img src="/images/github_icon.png" />
                         </a>
                     </div>
+                    <% if (user.hireable === 'True') { %>
+                      <a href="#" class="button hire_button">For Hire!</a>
+                    <% } else { %>
+                      <a href="#" class="button hire_button disabled">Not for hire.</a>
+                    <% } %>
                 </div>
             </li>
             <% }) %>
@@ -46,7 +52,7 @@
                 </div>
             </li>
 
-<li>
+            <li>
                 <div class="widget">
                   <div class="cover">
                     <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
@@ -58,7 +64,7 @@
                 </div>
             </li>
 
-<li>
+            <li>
                 <div class="widget">
                   <div class="cover">
                     <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
@@ -70,7 +76,7 @@
                 </div>
             </li>
 
-<li>
+            <li>
                 <div class="widget">
                   <div class="cover">
                     <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
@@ -82,7 +88,7 @@
                 </div>
             </li>
 
-<li>
+            <li>
                 <div class="widget">
                   <div class="cover">
                     <img src="http://25.media.tumblr.com/d55a509993790027240311c9f611aaf8/tumblr_n0hpzpKEfE1st5lhmo1_1280.jpg" />
@@ -92,14 +98,12 @@
                   <h2>Web Developer</h2>
                   <h3>Bristol, UK</h3>
                 </div>
-            </li>
-
-            
+            </li>  
         </ul>
     </div>
 </div>
 
-<div id="myProfile" class="reveal-modal" data-reveal>
+<div id="myProfile" class="reveal-modal small" data-reveal>
     <div class="widget">
         <div class="cover">
             <img src="http://25.media.tumblr.com/18e25cdcdaaced3b2b8a467724720ece/tumblr_n10n1wmxiS1st5lhmo1_1280.jpg" />

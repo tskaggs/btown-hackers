@@ -27,6 +27,7 @@
                 <a href="#">Hi <%= user.name %></a>
                 <ul class="dropdown">
                     <li><a href="#" data-reveal-id="myProfile" data-reveal>Profile</a></li>
+                    <li><a href="/user/edit/<%= user.id %>" class="small button">Edit</a></li>
                     <li><a href="/logout" class="small button">Logout</a></li>
                 </ul>
             </li>

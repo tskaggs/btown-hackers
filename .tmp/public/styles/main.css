@@ -2,8 +2,8 @@
 {
   position: relative;
   width: 100%;
-  height: 300px;
-  margin: 10px 0;
+  height: 400px;
+  margin: 0;
   padding: 0 !important;
   background: #FFF;
   border-radius: 5px;
@@ -88,11 +88,34 @@
 
 .widget > .links_bottom {
   text-align: center;
+  padding-bottom: 20px;
+  padding-top: 10px;
+
 }
 .widget > .links_bottom > a img {
   width: 30px;
 }
 
+#myProfile {
+  padding: 0 !important;
+}
+
 #myProfile > .widget {
-  width: 228px;
+  /*width: 228px;*/
+}
+
+.bio_box {
+  height: 200px;
+}
+
+.hire_button {
+  display: block !important;
+}
+
+.bio_box_1 {
+  max-height: 28px;
+  overflow: hidden;
+  border-bottom: 1px solid #E0E0E0;
+  width: 90%;
+  margin: 0 auto !important;
 }
