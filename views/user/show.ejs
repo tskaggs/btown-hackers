@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="large-3 columns small-centered">
+		<div class="widget">
+		    <div class="cover">
+		        <img src="http://25.media.tumblr.com/18e25cdcdaaced3b2b8a467724720ece/tumblr_n10n1wmxiS1st5lhmo1_1280.jpg" />
+		    </div>
+		    <img src="<%= user.avatar_url %>" class="photo" />
+		    <h1><a href="/user/show/<%= user.id %>"><%= user.name %></a></h1>
+		    <h2><%= user.position %></h2>
+		    <h2>@<%= user.company %></h2>
+		    <h3><%= user.location %></h3>
+		    <h3 class="bio_box_1"><%= user.bio %></h3>
+		    <div class="links_bottom">
+		        <a target="_blank" href="<%= user.profileUrl %>">
+		            <img src="/images/github_icon.png" />
+		        </a>
+		    </div>
+		    <% if (user.hireable === 'True') { %>
+		      <a href="#" class="button hire_button">For Hire!</a>
+		    <% } else { %>
+		      <a href="#" class="button hire_button disabled">Not for hire.</a>
+		    <% } %>
+		</div>
+	</div>
+</div>

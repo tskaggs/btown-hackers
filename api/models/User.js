@@ -18,6 +18,7 @@ module.exports = {
         email: 'STRING',
         hireable: 'STRING',
         location: 'STRING',
+        position: 'STRING',
         company: 'STRING',
         followers: 'INTEGER',
         public_repos: 'INTEGER',

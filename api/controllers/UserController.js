@@ -17,6 +17,17 @@
 
 module.exports = {
     
+    show: function (req, res) {
+    	res.view({
+            user: req.user
+        });
+    	// User.findOne(req.param('id'), function foundUser(err, user) {
+	  		// if (err) return next(err);
+	  		// res.view({
+	    //         user: req.user
+	    //     });
+	    // });
+  	},
   
     edit: function (req,res) {
     	console.log(req.user);
@@ -30,6 +41,7 @@ module.exports = {
 	    
 	    var userObj = {
 	    	name: req.param('name'),
+	    	position: req.param('position'),
 	    	company: req.param('company'),
 	    	location: req.param('location'),
 	    	hireable: req.param('hireable'),

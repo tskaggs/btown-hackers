@@ -49,6 +49,10 @@
   color: #999;
 }
 
+.widget > h2 {
+  margin: 0;
+}
+
 .widget > h1
 {
   margin: 24px 0 0 0;
@@ -89,7 +93,7 @@
 
 .widget > .links_bottom {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-top: 10px;
 
 }
