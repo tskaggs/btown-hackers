@@ -1,5 +1,6 @@
 var passport = require('passport')
-    , GitHubStrategy = require('passport-github').Strategy;
+    , GitHubStrategy = require('passport-github').Strategy
+    , AngellistStrategy = require('passport-angellist').Strategy;
 
 
 var verifyHandler = function (token, tokenSecret, profile, done) {
@@ -16,19 +17,39 @@ var verifyHandler = function (token, tokenSecret, profile, done) {
                     return done(null, user);
                 } else {
 
+                    console.log(profile);
+                    console.log(profile.provider);
+                    console.log(profile.id);
+                    console.log(profile.displayName);
+                    console.log(profile.bio);
+                    console.log(profile.email);
+
                     var data = {
                         provider: profile.provider,
                         uid: profile.id,
                         name: profile.displayName,
-                        profileUrl: profile.profileUrl,
-                        hireable: profile.hireable,
-                        location: profile.location,
-                        company: profile.company,
-                        followers: profile.followers,
-                        public_repos: profile.public_repos,
                         bio: profile.bio,
-                        avatar_url: profile.profilePic,
+                        email: profile.email,
                     };
+
+                    if (provider === "github") {
+                        data.profileUrl = profile.profileUrl;
+                        data.hireable = profile.hireable;
+                        data.location = profile.location;
+                        data.company = profile.company;
+                        data.followers = profile.followers;
+                        data.public_repos = profile.public_repos;
+                        data.avatar_url = profile.profilePic;
+                    } else {
+                        data.profileUrl = "Not available";
+                        data.hireable = "Not available";
+                        data.location = "Not available";
+                        data.company = "Not available";
+                        data.followers = "Not available";
+                        data.public_repos = "Not available";
+                        data.avatar_url = "Not available";
+                    }
+
 
                     if(profile.emails && profile.emails[0] && profile.emails[0].value) {
                         data.email = profile.emails[0].value;
@@ -72,6 +93,15 @@ module.exports = {
                 },
                 verifyHandler
             ));
+
+            passport.use(new AngellistStrategy({
+                    clientID: "",
+                    clientSecret: "",
+                    callbackURL: "http://localhost:1337/auth/angellist/callback"
+                },
+                verifyHandler
+            ));
+
 
             app.use(passport.initialize());
             app.use(passport.session());

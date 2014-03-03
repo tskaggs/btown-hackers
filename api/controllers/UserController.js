@@ -39,7 +39,7 @@ module.exports = {
 	    	company: req.param('company'),
 	    	location: req.param('location'),
 	    	hireable: req.param('hireable'),
-	        bio: req.param('bio'),
+	      bio: req.param('bio'),
 	    }
 		   
 	    User.update(req.param('id'), userObj, function userUpdated (err) {
